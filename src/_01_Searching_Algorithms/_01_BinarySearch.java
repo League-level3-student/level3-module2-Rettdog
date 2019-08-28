@@ -18,7 +18,9 @@ public class _01_BinarySearch {
 		if (end >= start) {
 			// 3. create an integer called mid and set it equal
 			// to the half way point between start and end
-			int mid = (start + end) / 2;
+			
+			int mid = Math.floorDiv(start+end, 2);
+			System.out.println(mid);
 			// 4. if the array element at mid is equal to value
 			// then return mid
 			if (array[mid] == value) {
@@ -28,12 +30,14 @@ public class _01_BinarySearch {
 			// then return the value returned from a call to the
 			// binarySearch method. Pass in start and mid - 1
 			// for the end variable.
-if(array[mid]>value) {
-	return binarySearch(array,start,mid-1,value);
-}
+			if (array[mid] > value) {
+				System.out.println(start+", "+(mid-1));
+				return binarySearch(array, start, mid - 1, value);
+			}
 			// 6. return the value returned from a call to the binarySearch
 			// method. Use mid + 1 as the start, and pass in end.
-return binarySearch(array,mid,end,value);
+			System.out.println(mid+", "+end);
+			return binarySearch(array, mid, end, value);
 		}
 		// 7. return -1 because the value was not found
 		return -1;
