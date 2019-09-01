@@ -42,12 +42,18 @@ class _04_SearchTest {
 	public void testInterpolationSearch() {
 		//3. use the assertEquals method to test your interpolation search method.
 		//   remember that the array must be sorted and evenly distributed
+		assertEquals(interpolation.interpolationSearch(evenlySpacedInt, 23),11);
+		assertEquals(interpolation.interpolationSearch(evenlySpacedInt, 44),-1);
+		assertEquals(interpolation.interpolationSearch(evenlySpacedInt, 5),2);
 	}
 	
 	@Test
 	public void testExponentialSearch() {
 		//4. use the assertEquals method to test your exponential search method.
 		//   remember that the array must be sorted
+		assertEquals(exponential.exponentialSearch(sortedInt, 17),3);
+		assertEquals(exponential.exponentialSearch(sortedInt, 99),13);
+		assertEquals(exponential.exponentialSearch(sortedInt, 34),-1);
 	}
 	
 	public int[] randomFill(int[] array) {
